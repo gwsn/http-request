@@ -1,0 +1,25 @@
+{
+    "name": "gwsn/http-request",
+    "description": "Add some functionality to Guzzle Client request with validation",
+
+    "keywords": ["Guzzle", "Basic Http Request", "HTTP Proxy", "Basic HTTP Proxy"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jurn Overmars",
+            "email": "jovermars@gwsn.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "^6.3"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Gwsn\\HttpRequest\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
