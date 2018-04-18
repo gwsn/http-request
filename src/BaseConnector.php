@@ -5,9 +5,9 @@ namespace Gwsn\HttpRequest;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Exception\ClientException;
+use Psr\Log\LoggerInterface;
 
 
 
@@ -54,7 +54,7 @@ class BaseConnector {
     private $cacheUtil = null;
 
     /**
-     * @var object $logger
+     * @var LoggerInterface $logger
      */
     private $logger = null;
 
@@ -86,7 +86,7 @@ class BaseConnector {
      * @param $cacheUtil
      * @param $logger
      */
-    public function __construct($cacheUtil = null, $logger = null) {
+    public function __construct(LoggerInterface $logger = null, $cacheUtil = null) {
         $this->proxy = false;
         $this->cacheUtil = $cacheUtil;
         $this->logger = $logger;
@@ -170,7 +170,7 @@ class BaseConnector {
     /**
      * @return object
      */
-    public function getCacheUtil(): object
+    public function getCacheUtil()
     {
         return $this->cacheUtil;
     }
@@ -178,23 +178,23 @@ class BaseConnector {
     /**
      * @param object $cacheUtil
      */
-    public function setCacheUtil(object $cacheUtil): void
+    public function setCacheUtil($cacheUtil): void
     {
         $this->cacheUtil = $cacheUtil;
     }
 
     /**
-     * @return object
+     * @return LoggerInterface
      */
-    public function getLogger(): object
+    public function getLogger(): LoggerInterface
     {
         return $this->logger;
     }
 
     /**
-     * @param object $logger
+     * @param LoggerInterface $logger
      */
-    public function setLogger(object $logger): void
+    public function setLogger(LoggerInterface $logger): void
     {
         $this->logger = $logger;
     }
