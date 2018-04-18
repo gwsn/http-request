@@ -8,7 +8,7 @@ use Psr\Http\Message\StreamInterface;
 /**
  * Interface BaseResponseInterface
  *
- * @package App\Models\BizHost\BaseConnector
+ * @package Gwsn\HttpRequest\BaseConnector
  */
 interface ResponseInterface {
 
