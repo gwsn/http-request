@@ -498,12 +498,12 @@ class BaseConnector {
 
     /**
      * @param string $key
-     * @param string $value
+     * @param mixed $value
      * @param int|null $cacheTime
      *
      * @return bool|null
      */
-    protected function setCache(string $key, string $value, int $cacheTime = null) {
+    protected function setCache(string $key, $value = null, int $cacheTime = null) {
         $cacheTime = ($cacheTime === null ? $this->getCacheTime() : $cacheTime);
         $cacheUtil = $this->getCacheUtil();
 
